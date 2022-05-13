@@ -10,7 +10,10 @@
       #userField="ngModel"
       required
     />
-    <app-message *ngIf="userField.invalid && userField.touched" message="usuário obrigatório"></app-message>
+    <app-message
+      *ngIf="userField.invalid && userField.touched"
+      message="usuário obrigatório"
+    ></app-message>
   </div>
 
   <div class="form-group">
@@ -23,8 +26,19 @@
       #passwordField="ngModel"
       required
     />
-    <app-message *ngIf="passwordField.invalid && passwordField.touched" message="senha obrigatória"></app-message>
+    <app-message
+      *ngIf="passwordField.invalid && passwordField.touched"
+      message="senha obrigatória"
+    ></app-message>
   </div>
 
-  <button type="submit" class="btn btn-primary btn-block" [disabled]="loginForm.invalid">Login</button>
+  <button
+    type="submit"
+    class="btn btn-primary btn-block"
+    [disabled]="loginForm.invalid"
+  >
+    Login
+  </button>
 </form>
+
+<p>Não é um usuário? <a [routerLink]="['newuser']">cadastre-se</a></p>
