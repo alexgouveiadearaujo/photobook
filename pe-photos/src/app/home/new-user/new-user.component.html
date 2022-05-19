@@ -4,9 +4,13 @@
   <div class="form-group">
     <input  placeholder="e-mail" class="form-control" formControlName="email" />
   </div>
+  <app-message *ngIf="newUserForm.get('email')?.errors?.required && newUserForm.get('email')?.touched " message="email obrigatório"></app-message>
+  <app-message *ngIf="newUserForm.get('email')?.errors?.email && newUserForm.get('email')?.touched " message="email com formato incorreto"></app-message>
   <div class="form-group">
     <input  placeholder="nome completo" class="form-control" formControlName="fullName"/>
   </div>
+  <app-message *ngIf="newUserForm.get('fullName')?.errors && newUserForm.get('fullName')?.touched " message="nome incorreto"></app-message>
+
   <div class="form-group">
     <input  placeholder="usuário" class="form-control" formControlName="userName"/>
   </div>
