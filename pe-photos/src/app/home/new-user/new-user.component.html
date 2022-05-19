@@ -2,20 +2,58 @@
 
 <form class="form mt-4" [formGroup]="newUserForm" (submit)="register()">
   <div class="form-group">
-    <input  placeholder="e-mail" class="form-control" formControlName="email" />
+    <input placeholder="e-mail" class="form-control" formControlName="email" />
   </div>
-  <app-message *ngIf="newUserForm.get('email')?.errors?.required && newUserForm.get('email')?.touched " message="email obrigatório"></app-message>
-  <app-message *ngIf="newUserForm.get('email')?.errors?.email && newUserForm.get('email')?.touched " message="email com formato incorreto"></app-message>
+  <app-message
+    *ngIf="
+      newUserForm.get('email')?.errors?.required &&
+      newUserForm.get('email')?.touched
+    "
+    message="email obrigatório"
+  ></app-message>
+  <app-message
+    *ngIf="
+      newUserForm.get('email')?.errors?.email &&
+      newUserForm.get('email')?.touched
+    "
+    message="email com formato incorreto"
+  ></app-message>
   <div class="form-group">
-    <input  placeholder="nome completo" class="form-control" formControlName="fullName"/>
+    <input
+      placeholder="nome completo"
+      class="form-control"
+      formControlName="fullName"
+    />
   </div>
-  <app-message *ngIf="newUserForm.get('fullName')?.errors && newUserForm.get('fullName')?.touched " message="nome incorreto"></app-message>
+  <app-message
+    *ngIf="
+      newUserForm.get('fullName')?.errors &&
+      newUserForm.get('fullName')?.touched
+    "
+    message="nome incorreto"
+  ></app-message>
 
   <div class="form-group">
-    <input  placeholder="usuário" class="form-control" formControlName="userName"/>
+    <input
+      placeholder="usuário"
+      class="form-control"
+      formControlName="userName"
+    />
   </div>
+  <app-message
+    *ngIf="
+      newUserForm.get('userName')?.errors?.lowerCase &&
+      newUserForm.get('userName')?.touched
+    "
+    message="usúario deve ser em letras minúsculas"
+  ></app-message>
   <div class="form-group">
-    <input type="password" placeholder="senha" class="form-control" formControlName="password"/>
+    <input
+      type="password"
+      placeholder="senha"
+      class="form-control"
+      formControlName="password"
+    />
   </div>
   <button class="btn btn-primary btn-block">Cadastro</button>
 </form>
