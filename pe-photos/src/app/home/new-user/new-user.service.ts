@@ -11,4 +11,9 @@ export class NewUserService {
   registerNewUser(newUser: INewUser) {
     return this.http.post('http://localhost:3000/user/signup', newUser);
   }
+
+  existingUser(userName: string){
+    return this.http.get(`http://localhost:3000/user/exists/${userName}`)
+  }
+
 }

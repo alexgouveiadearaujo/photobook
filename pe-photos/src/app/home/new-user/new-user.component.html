@@ -47,6 +47,7 @@
     "
     message="usúario deve ser em letras minúsculas"
   ></app-message>
+  <app-message *ngIf="newUserForm.get('userName')?.errors?.existingUser" message="usuário já existe"></app-message>
   <div class="form-group">
     <input
       type="password"
