@@ -5,6 +5,7 @@ import { NewUserService } from './new-user.service';
 import { INewUser } from './new-user';
 import { lowerCaseValidator } from './lowerCase.validator';
 import { usernamePasswordEqualsValidator } from './username-password-equals.validator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-user',
@@ -17,7 +18,8 @@ export class NewUserComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private newUserService: NewUserService,
-    private existingUserService: ExistingUserService
+    private existingUserService: ExistingUserService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -37,7 +39,14 @@ export class NewUserComponent implements OnInit {
   }
 
   register() {
-    const newuser = this.newUserForm.getRawValue() as INewUser;
-    console.log(newuser);
+    if (this.newUserForm.valid) {
+      const newuser = this.newUserForm.getRawValue() as INewUser;
+      this.newUserService.registerNewUser(newuser).subscribe(
+        () => {
+          this.router.navigate(['']);
+        },
+        (error) => console.log(error)
+      );
+    }
   }
 }
