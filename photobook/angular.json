@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pe-photos": {
+    "photobook": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pe-photos",
+            "outputPath": "dist/photobook",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "pe-photos:build"
+            "browserTarget": "photobook:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "pe-photos:build:production"
+              "browserTarget": "photobook:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pe-photos:build"
+            "browserTarget": "photobook:build"
           }
         },
         "test": {
@@ -116,15 +116,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "pe-photos:serve"
+            "devServerTarget": "photobook:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "pe-photos:serve:production"
+              "devServerTarget": "photobook:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "pe-photos"
+  "defaultProject": "photobook"
 }
