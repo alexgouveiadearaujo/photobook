@@ -1,5 +1,7 @@
+import { LoginGuard } from './authentication/login.guard';
+import { AuthenticationGuard } from './authentication/authentication.guard';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanLoad } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -9,11 +11,13 @@ const routes: Routes = [
   },
   {
     path:'home',
-    loadChildren: ()=> import('./home/home.module').then(module => module.HomeModule)
+    loadChildren: ()=> import('./home/home.module').then(module => module.HomeModule),
+    canLoad: [LoginGuard]
   },
   {
     path:'photographs',
-    loadChildren: ()=> import('./photographs/photographs.module').then(m => m.PhotographsModule)
+    loadChildren: ()=> import('./photographs/photographs.module').then(m => m.PhotographsModule),
+    canLoad:[AuthenticationGuard]
   }
 ];
 
