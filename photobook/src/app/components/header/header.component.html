@@ -1,10 +1,10 @@
 <header class="sticky-top">
   <nav class="navbar navbar-light bg-white">
     <a class="navbar-brand">Photobook</a>
-    <div *ngIf="user$ | async as Iuser">
-      <div *ngIf="Iuser.name; else login">
+    <div *ngIf="user$ | async as user">
+      <div *ngIf="user.name; else login">
       <i class="fa fa-user-circle mr-1"></i>
-      <a class="mr-1">{{ Iuser.name }}</a>
+      <a class="mr-1">{{ user.name }}</a>
       <a (click)="logout()">Logout</a>
     </div>
     </div>

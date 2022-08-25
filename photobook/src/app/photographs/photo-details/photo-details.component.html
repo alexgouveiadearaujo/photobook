@@ -1,0 +1,19 @@
+<div class="bg-white border" *ngIf="photo$ | async as photo">
+<div class="row">
+  <div class="col-lg-8">
+    <app-photo [url]="photo.url" description="photo.description"></app-photo>
+  </div>
+  <div class="col-lg-4">
+    <small>
+      <p class="text-left break-word">{{photo.description}}</p>
+      <i (click)="like()" class="fa fa-heart-o fa-2x mr-2 pull-left">{{photo.likes}}</i>
+      <i class="fa fa-comment-o fa-2x mr-2 ml-2">{{photo.comments}}</i>
+      <i (click)="remove()" class="fa fa-trash-o fa-2x pull-right"></i>
+    </small>
+    <app-comments [id]="photoId" *ngIf="photo.allowComments; else warning"></app-comments>
+    <ng-template #warning>
+      <p>Usuário não pode comentar foto.</p>
+    </ng-template>
+  </div>
+</div>
+</div>
