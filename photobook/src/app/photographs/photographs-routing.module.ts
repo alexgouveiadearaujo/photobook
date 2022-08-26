@@ -1,3 +1,4 @@
+import { NewPhotoComponent } from './new-photo/new-photo.component';
 import { PhotoListResolver } from './photo-list/photo-list.resolver';
 import { PhotoDetailsComponent } from './photo-details/photo-details.component';
 import { PhotoListComponent } from './photo-list/photo-list.component';
@@ -11,6 +12,10 @@ const routes: Routes = [
     resolve: {
       photos: PhotoListResolver,
     },
+  },
+  {
+    path: 'new',
+    component: NewPhotoComponent,
   },
   {
     path: ':photoId',

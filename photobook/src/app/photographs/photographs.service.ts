@@ -37,4 +37,16 @@ export class PhotographsService {
         })
       );
   }
+
+  upload(description: string, allowComment: boolean, file: File) {
+    const formData = new FormData();
+    formData.append('description', description);
+    formData.append('allowComments', allowComment ? 'true' : 'false');
+    formData.append('imageFile', file);
+
+    return this.http.post(`${API}/photos/upload`, formData, {
+      observe: 'events',
+      reportProgress: true
+    });
+  }
 }
