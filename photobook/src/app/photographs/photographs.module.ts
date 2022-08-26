@@ -11,6 +11,7 @@ import { PhotoDetailsComponent } from './photo-details/photo-details.component';
 import { CommentsComponent } from './photo-details/comments/comments.component';
 import { MessageModule } from '../components/message/message.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NewPhotoComponent } from './new-photo/new-photo.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     GridPhotosComponent,
     PhotoDetailsComponent,
     CommentsComponent,
+    NewPhotoComponent,
   ],
   imports: [CommonModule, PhotographsRoutingModule, CardModule, SharedModule],
 })
