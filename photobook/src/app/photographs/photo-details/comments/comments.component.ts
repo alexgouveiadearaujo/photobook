@@ -18,7 +18,9 @@ export class CommentsComponent implements OnInit {
   constructor(
     private commentsService: CommentsService,
     private formBuilder: FormBuilder
-  ) {}
+  ) {
+    console.log(this.comments$);
+  }
 
   ngOnInit(): void {
     this.comments$ = this.commentsService.searchComment(this.id);
@@ -33,7 +35,6 @@ export class CommentsComponent implements OnInit {
       switchMap(() => this.commentsService.searchComment(this.id)),
       tap(() => {
         this.commentForm.reset();
-        alert('Comentário salvo');
       })
     );
   }

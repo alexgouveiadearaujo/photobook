@@ -1,0 +1,31 @@
+.description {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.div-comments {
+  padding: 0 10px 10px;
+  border: solid 1.5px;
+}
+
+.div-details {
+  height: calc(100vh - 56px);
+  margin: 0 auto;
+}
+
+.div-content-details {
+  border: solid 1.5px;
+  width: 98%;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.div-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-remove {
+  cursor: pointer;
+}

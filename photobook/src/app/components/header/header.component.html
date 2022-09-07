@@ -1,17 +1,18 @@
 <header class="sticky-top">
   <nav class="navbar navbar-light bg-white">
-    <a class="navbar-brand">
+    <div>
       <i
         class="fa fa-bars mr-2"
         (click)="menu.openMenu()"
         (keyup.space)="menu.openMenu()"
       >
       </i>
-      Photobook</a
-    >
+      <a class="navbar-brand" [routerLink]="['']"> Photobook</a>
+    </div>
     <app-menu #menu>
       <ul class="list-unstyled">
-        <li><a [routerLink]="['photographs', 'new']">Nova foto</a></li>
+        <li><a [routerLink]="['']">Suas fotos</a></li>
+        <li><a [routerLink]="['photographs', 'newphoto']">Insira nova foto</a></li>
       </ul>
     </app-menu>
 
@@ -19,7 +20,8 @@
       <div *ngIf="user.name; else login">
         <i class="fa fa-user-circle mr-1"></i>
         <a class="mr-1">{{ user.name }}</a>
-        <a (click)="logout()">Logout</a>
+        |
+        <a (click)="logout()" class="a">Logout</a>
       </div>
     </div>
   </nav>

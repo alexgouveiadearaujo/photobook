@@ -1,4 +1,36 @@
-.comment-list{
+.comment-list {
   height: 50vh;
   overflow-y: auto;
+}
+
+.userName {
+  padding-right: 5px;
+  margin-bottom: 0;
+}
+
+.userName::first-letter {
+  text-transform: uppercase;
+}
+
+.date {
+  text-decoration: dotted;
+  font-size: 12px;
+}
+
+li {
+  border: solid 2px black;
+  background-color: rgb(0 0 0 / 9%);
+  box-shadow: 0px 3px 4px 0px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 7px;
+  position: relative;
+}
+
+.x {
+  cursor: pointer;
+  position: absolute;
+  right: 7px;
+  margin: 0;
+  top: -5px;
 }
