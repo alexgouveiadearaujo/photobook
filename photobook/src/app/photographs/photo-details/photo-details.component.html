@@ -1,14 +1,14 @@
-<div class="bg-white border" *ngIf="photo$ | async as photo">
-<div class="row">
-  <div class="col-lg-8">
+<div class="bg-white  div-details" *ngIf="photo$ | async as photo" >
+<div class="row div-content-details">
+  <div class="col-lg-8 div-img">
     <app-photo [url]="photo.url" description="photo.description"></app-photo>
   </div>
-  <div class="col-lg-4">
+  <div class="col-lg-4 div-comments">
     <small>
-      <p class="text-left break-word">{{photo.description}}</p>
+      <p class="text-left break-word description">{{photo.description}}</p>
       <i (click)="like()" class="fa fa-heart-o fa-2x mr-2 pull-left">{{photo.likes}}</i>
       <i class="fa fa-comment-o fa-2x mr-2 ml-2">{{photo.comments}}</i>
-      <i (click)="remove()" class="fa fa-trash-o fa-2x pull-right"></i>
+      <i (click)="remove()" class="fa fa-trash-o fa-2x pull-right icon-remove"></i>
     </small>
     <app-comments [id]="photoId" *ngIf="photo.allowComments; else warning"></app-comments>
     <ng-template #warning>

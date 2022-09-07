@@ -33,11 +33,13 @@ export class PhotoDetailsComponent implements OnInit {
   }
 
   remove() {
-    this.photographsService.deletePhoto(this.photoId).subscribe(
-      () => {
-        this.router.navigate(['/photographs/']);
-      },
-      (err) => console.log(`ERROR: ${err}`)
-    );
+    if (confirm('Deseja excluir foto ?')) {
+      this.photographsService.deletePhoto(this.photoId).subscribe(
+        () => {
+          this.router.navigate(['/photographs/']);
+        },
+        (err) => console.log(`ERROR: ${err}`)
+      );
+    }
   }
 }

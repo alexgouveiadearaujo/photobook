@@ -7,12 +7,14 @@
       <app-card>
         <app-photo [url]="photo.url" [description]="photo.description">
         </app-photo>
-        <i aria-hidden="true" class="fa fa-heart-o fa-1x mr-2">{{
-          photo.likes
-        }}</i>
-        <i aria-hidden="true" class="fa fa-comment-o fa-1x mr-2 ml-2">{{
-          photo.comments
-        }}</i>
+        <div class="div-icons">
+          <i aria-hidden="true" class="fa fa-heart-o fa-1x mr-2">{{
+            photo.likes
+          }}</i>
+          <i aria-hidden="true" class="fa fa-comment-o fa-1x mr-2 ml-2">{{
+            photo.comments
+          }}</i>
+        </div>
       </app-card>
     </a>
   </div>
